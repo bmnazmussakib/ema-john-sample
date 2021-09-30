@@ -1,0 +1,25 @@
+.product{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 25px;
+    margin-left: 30px;
+    padding: 30px 20px;
+}
+.product-name{
+    color: blue;
+    font-weight: 400;
+}
+.add-to-cart{
+    background-color: gold;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 50px;
+}
+.add-to-cart:hover{
+    background-color: goldenrod;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.cart-icon{
+margin-right: 10px;
+}
