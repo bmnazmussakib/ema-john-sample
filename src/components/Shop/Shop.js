@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { addToDatabaseCart } from '../../utilities/databaseManager';
+import { addToDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 // import fakeData from '../../fakeData';
-
-// import {data} from '../../fakeData/products.JSON'
+// import {data} from '../../fakeData/products.JSON';
 
 
 const Shop = () => {
@@ -13,9 +14,9 @@ const Shop = () => {
     const getData=()=>{
         fetch('fakeData/products.JSON')
         .then(response => response.json())
-            .then(data => {
-                const first10 = data.slice(0, 10);
-                setProducts(first10);
+        .then(data => {
+            const first10 = data.slice(0, 10);
+            setProducts(first10);
         })
       }
       useEffect(()=>{
@@ -25,10 +26,13 @@ const Shop = () => {
     const [cart, setCart] = useState([])
     
     const handleAddProduct = (product) => {
-        // console.log("Product added", product);
+        // console.log(product);
         let newCart = [...cart, product];
         setCart(newCart);
-        console.log(newCart);
+        // const sameProduct = newCart.filter(pd => pd.key === product.key);
+        // const count = sameProduct.length;
+        // addToDatabaseCart(products.keys, count);
+        addToDb(product.key);
     }
     
     return (
@@ -36,7 +40,7 @@ const Shop = () => {
 
             <div className="products-container">
                     {
-                        products.map(pd => <Product handleAddProduct={handleAddProduct} products={pd}></Product>)
+                        products.map(pd => <Product showAddCart={true} handleAddProduct={handleAddProduct} products={pd}></Product>)
                     }
             </div>
 
