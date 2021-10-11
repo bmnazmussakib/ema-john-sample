@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import data from '../../fakeData';
+import fakeData from '../../fakeData';
+
 import Product from '../Product/Product';
 
 
@@ -9,7 +11,7 @@ const ProductDetails = () => {
 
     const { productKey } = useParams();
     
-    const product = data.find(pd => pd.key === productKey);
+    const product = fakeData.find(pd => pd.key === productKey);
 
     console.log(product);
 

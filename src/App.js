@@ -4,7 +4,7 @@ import Shop from './components/Shop/Shop';
 import Review from './components/Review/Review';
 import NotFound from './components/NotFound/NotFound';
 import Inventory from './components/Inventory/Inventory';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductDetails from './components/ProductDetails/ProductDetails';
 
 
